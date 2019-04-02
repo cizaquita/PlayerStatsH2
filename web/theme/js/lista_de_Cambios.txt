@@ -1,0 +1,18 @@
+agregados los botones para instagram y twitter, falta aun enlazarlos
+--actualizado instagram
+-----------------------------------------------------------
+				<a target="_blank" href="">
+					<div class="image-container">
+						<h2><img class="link-icon" src=""/> Instagram</h2>
+					</div>
+				</a><a target="_blank" href="">
+					<div class="image-container">
+						<h2><img class="link-icon" src=""/> Twitter</h2>
+					</div>
+				</a>
+-----------------------------------------------------------
+
+agregada la clase del jquery, falta implementar
+--implementada
+
+falta crear la pagina por cada jugador
