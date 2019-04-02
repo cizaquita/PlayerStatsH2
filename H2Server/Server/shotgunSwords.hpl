@@ -1,0 +1,286 @@
+
+; PLAYLIST [Clow] Clan
+; Documentado y traducido para mayor entendimiento.
+
+; Las líneas que inician con ; (punto y coma) son omitidas
+; por la configuración del servidor, en otras palabras..
+; solo son comentarios.
+
+; Para entender en forma resumida explicaré como se compone el archivo:
+; Una playlist [playlist] se compone de variantes [custom variant],
+; y una variante tiene varias partidas [match] que es donde se encuentran las pistas
+
+; Last updated Feb 2019
+; By @Cizaquita
+; about.me/Cizaquita
+; t.me/cizaquita
+
+
+[playlist]
+; Tiempo de espera en segundos para CAMBIAR DE EQUIPO ANTES de empezar el conteo de inicio.
+Pregame Team Selection Delay=5
+
+; Tiempo de espera del servidor ANTES de iniciar la partida.
+Pregame Delay=5
+
+; Tiempo de espera de vista de estadísticas cuando termina la partida.
+Postgame Delay=5
+
+; Randomiza las variantes creadas en la playlist.
+; Valores: on/off
+shuffle=off
+
+
+[custom variant]
+;---------------------------------------------
+name = ShotgunSwords
+;ROUND SETTINGS
+	Base Variant = Slayer
+	Max Active Players = 16
+	Number of rounds = 1
+	Score to win round = 100
+	Round time limit = 30
+	Rounds reset map = on
+	Resolve ties =0n
+	Lives per round = unlimited
+	Respawn time = 3 seconds
+	Suicide penalty = 5 seconds
+	Shield type = normal shields
+	Motion sensor = on
+	Active camo = off
+	Extra damage = off
+	Damage resistance = off
+;TEAM SETTINGS
+	Team play = off
+	Team scoring = sum
+	Team changing = off
+	Friendly Fire = off
+	Respawn time modifier = none
+	Force even teams = on
+;GAME VARIANT SPECIFICS
+	Bonus Points = off
+	Suicide Point Loss = off
+	death point loss = off
+;VEHICLE SETTINGS
+	Vehicle respawn time = map default
+	Primary light vehicle = map default
+	Secondary light vehicle = map default
+	Primary heavy vehicle = map default
+	Banshee = off
+	Primary turret = map default
+	Secondary turret = map default
+
+;EQUIPMENT AND WEAPON SETTINGS
+	Starting weapon = shotgun
+	Secondary weapon = energy sword
+	Starting grenades = off
+	Weapons on map = shotguns
+	Weapon respawn time = map default
+	Grenades on map = on
+	Overshields = on
+	Active camo on map = on
+
+
+[custom variant]
+;---------------------------------------------
+name = BRSnipers
+;ROUND SETTINGS
+	Base Variant = Slayer
+	Max Active Players = 16
+	Number of rounds = 1
+	Score to win round = 100
+	Round time limit = 30
+	Rounds reset map = on
+	Resolve ties =0n
+	Lives per round = unlimited
+	Respawn time = 3 seconds
+	Suicide penalty = 5 seconds
+	Shield type = normal shields
+	Motion sensor = on
+	Active camo = off
+	Extra damage = off
+	Damage resistance = off
+;TEAM SETTINGS
+	Team play = off
+	Team scoring = sum
+	Team changing = off
+	Friendly Fire = off
+	Respawn time modifier = none
+	Force even teams = off
+;GAME VARIANT SPECIFICS
+	Bonus Points = off
+	Suicide Point Loss = off
+	death point loss = off
+; VEHICLE SETTINGS
+	Vehicle respawn time = map default
+	Primary light vehicle = none
+	Secondary light vehicle = none
+	Primary heavy vehicle = none
+	Banshee = off
+	Primary turret = map default
+	Secondary turret = map default
+; EQUIPMENT AND WEAPON SETTINGS
+	Starting weapon = Battle Rifle
+	Secondary weapon = Sniper Rifle
+	Starting grenades = off
+	Weapons on map = Sniping
+	Weapon respawn time = Half As Often
+	Grenades on map = on
+	Overshields = on
+	Active camo on map = on
+
+
+[custom variant]
+;---------------------------------------------
+name = BRSnipersTM
+;ROUND SETTINGS
+	Base Variant = Slayer
+	Max Active Players = 16
+	Number of rounds = 1
+	Score to win round = 100
+	Round time limit = 30
+	Rounds reset map = on
+	Resolve ties =0n
+	Lives per round = unlimited
+	Respawn time = 3 seconds
+	Suicide penalty = 5 seconds
+	Shield type = normal shields
+	Motion sensor = on
+	Active camo = off
+	Extra damage = off
+	Damage resistance = off
+;TEAM SETTINGS
+	Team play = on
+	Team scoring = sum
+	Team changing = off
+	Friendly Fire = off
+	Respawn time modifier = none
+	Force even teams = off
+;GAME VARIANT SPECIFICS
+	Bonus Points = off
+	Suicide Point Loss = off
+	death point loss = off
+; VEHICLE SETTINGS
+	Vehicle respawn time = map default
+	Primary light vehicle = none
+	Secondary light vehicle = none
+	Primary heavy vehicle = none
+	Banshee = off
+	Primary turret = map default
+	Secondary turret = map default
+; EQUIPMENT AND WEAPON SETTINGS
+	Starting weapon = Battle Rifle
+	Secondary weapon = Sniper Rifle
+	Starting grenades = off
+	Weapons on map = Sniping
+	Weapon respawn time = Half As Often
+	Grenades on map = on
+	Overshields = on
+	Active camo on map = on
+
+
+[custom variant]
+;---------------------------------------------
+name = TeamSwords:P
+;ROUND SETTINGS
+	Base Variant = Slayer
+	Max Active Players = 16
+	Number of rounds = 1
+	Score to win round = 100
+	Round time limit = 30
+	Rounds reset map = on
+	Resolve ties =0n
+	Lives per round = unlimited
+	Respawn time = 3 seconds
+	Suicide penalty = 5 seconds
+	Shield type = normal shields
+	Motion sensor = on
+	Active camo = off
+	Extra damage = off
+	Damage resistance = off
+;TEAM SETTINGS
+	Team play = on
+	Team scoring = sum
+	Team changing = on
+	Friendly Fire = off
+	Respawn time modifier = none
+	Force even teams = off
+; GAME VARIANT SPECIFICS
+	Bonus Points = off
+	Suicide Point Loss = off
+	death point loss = off
+; VEHICLE SETTINGS
+	Vehicle respawn time = map default
+	Primary light vehicle = none
+	Secondary light vehicle = none
+	Primary heavy vehicle = none
+	Banshee = off
+	Primary turret = map default
+	Secondary turret = map default
+; EQUIPMENT AND WEAPON SETTINGS
+	Starting weapon = shotgun
+	Secondary weapon = energy sword
+	Starting grenades = off
+	Weapons on map = shotguns
+	Weapon respawn time = Half As Often
+	Grenades on map = on
+	Overshields = on
+	Active camo on map = on
+
+
+
+;---------------------------------------------
+;---------------------------------------------
+;---------------------------------------------
+;---------------------------------------------
+[match]
+Variant=ShotgunSwords
+Map=Lockout
+
+[match]
+Variant=ShotgunSwords
+Map=Midship
+
+[match]
+Variant=TeamSwords:P
+Map=Lockout
+
+[match]
+Variant=BRSnipersTM
+Map=Lockout
+
+[match]
+Variant=ShotgunSwords
+Map=Beaver Creek
+
+[match]
+Variant=TeamSwords:P
+Map=Midship
+
+[match]
+Variant=ShotgunSwords
+Map=Sanctuary
+
+[match]
+Variant=ShotgunSwords
+Map=Lockout
+
+[match]
+Variant=TeamSwords:P
+Map=Turf
+
+[match]
+Variant=BRSnipersTM
+Map=Turf
+
+[match]
+Variant=ShotgunSwords
+Map=Lockout
+
+[match]
+Variant=ShotgunSwords
+Map=Warlock
+
+[match]
+Variant=BRSnipers
+Map=Lockout
