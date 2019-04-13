@@ -28,11 +28,13 @@
 	<link rel="shortcut icon" href="./theme/images/favicon.ico?version=1">
 	
 	<title>Clan [Clow] - Halo 2 &bull; Stats</title>
-	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	
 	<!-- Css -->
 	<link rel="stylesheet" type="text/css" href="./theme/css/layout.css?v=1">
 	<link rel="stylesheet" type="text/css" href="./theme/css/fonts.css">
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<!-- End Css -->
   </head>
 
@@ -127,6 +129,22 @@
 				</div>
 		</div>
 		<!-- End Links Description -->
+
+		<!-- Message Center -->
+		<div id="news-bg">
+			<div id="news">
+				<hr>
+				<div id="news-center">
+					<h3 style="text-align: center; margin: 0 0 0 0; padding: 0 0 0 0;">Search player data</h3>
+					<label for="gamertag">Gamertag: </label>
+					<input id="gamertag" disabled="disabled">
+					<input type="hidden" id="gamertag-id">
+					<p id="gamertag-description"></p>
+				</div>
+
+			</div>
+		</div>
+		<!-- End Message Center -->
 
 		<!-- Message Center -->
 		<div id="news-bg">

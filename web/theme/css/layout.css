@@ -212,6 +212,10 @@ a:link, a:active {
 	color: #B8D7F1;
 	cursor: pointer;	
 }
+input:disabled{
+	background-color: #8EB1CF;
+	cursor: no-drop;
+}
 
 a.pcart:link, a.pcart:visited {
 	cursor:url(../images/download/pointer1.png), url(/theme/images/download/pointer1.cur), default;
@@ -278,6 +282,21 @@ a.pcart:link, a.pcart:visited {
 	float: left;
 	width: 40%;
 	margin: 3em 0 0 3em;
+}
+
+#gamertag-label {
+	display: block;
+	font-weight: bold;
+	margin-bottom: 1em;
+}
+#gamertag-icon {
+	float: left;
+	height: 32px;
+	width: 32px;
+}
+#gamertag-description {
+	margin: 0;
+	padding: 0;
 }
 
 .links-right {
@@ -458,6 +477,7 @@ a.links-img {
 	margin: 25px 0 0 0;
 	font-size: 24px;
 	overflow: auto;
+	min-height: 150px; 
 }
 
 /*** Mobile <1230px ***/

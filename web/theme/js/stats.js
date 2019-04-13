@@ -1,7 +1,8 @@
 
 $(window).load(function() {
   //var playerStats = "http://138.68.233.236:2010/get_players/";
-  var playerStats = "http://181.61.59.95:2010/get_players/";
+  var playerStats = "http://134.209.212.27:8080/get_players/";
+  var gamertags = [];
 
   //remove 000webhost brand if exist
   let el = document.querySelector('[alt="www.000webhost.com"]');
@@ -48,6 +49,8 @@ $(window).load(function() {
 				return new Date(b.fields.modification_date).getTime() - new Date(a.fields.modification_date).getTime();
 			});
 			createLasActivityTable(activityData);
+			pushPlayers(activityData);
+			$("#gamertag").prop('disabled', false);
 		})
 		.fail(function(){
 			$('.kills-table').html('<p>Server off.</p>');
@@ -57,7 +60,6 @@ $(window).load(function() {
 	function createKillsTable(killsData){		
 		var table_body = '<table border="1"><thead><tr><th>Gametag</th><th>Kills</th><th>Deaths</th><th>K/D Ratio</th></tr></thead><tbody>';
 		$.each(killsData, function (i, player) {
-			//console.log('[' + i + ']' + player.fields.name);
 			table_body += '<tr>';
 			table_body += '<td>';
 			table_body += '<a href="profile.html?id=' + player.pk + '">' + player.fields.name + '</a>';
@@ -83,7 +85,6 @@ $(window).load(function() {
 	function createSpreeTable(spreeData){
 		var table_body = '<table border="1"><thead><tr><th>Gametag</th><th>BestSpree</th><th>Map</th><th>Variant</th></tr></thead><tbody>';
 		$.each(spreeData, function (i, player) {
-			//console.log('[' + i + ']' + player.fields.name);
 			table_body += '<tr>';
 			table_body += '<td>';
 			table_body += '<a href="profile.html?id=' + player.pk + '">' + player.fields.name + '</a>';
@@ -112,7 +113,6 @@ $(window).load(function() {
 	function createClowKillsTable(killsData){		
 		var table_body = '<table border="1"><thead><tr><th>Gametag</th><th>Kills</th><th>Deaths</th><th>K/D Ratio</th></tr></thead><tbody>';
 		$.each(killsData, function (i, player) {
-			//console.log('[' + i + ']' + player.fields.name);
 			if (player.fields.name.toLowerCase().indexOf('clow') > - 1) {				
 				table_body += '<tr>';
 				table_body += '<td>';
@@ -138,7 +138,6 @@ $(window).load(function() {
 	function createClowSpreeTable(spreeData){
 		var table_body = '<table border="1"><thead><tr><th>Gametag</th><th>BestSpree</th><th>Map</th><th>Variant</th></tr></thead><tbody>';
 		$.each(spreeData, function (i, player) {
-			//console.log('[' + i + ']' + player.fields.name);
 			if (player.fields.name.toLowerCase().indexOf('clow') > - 1) {	
 				table_body += '<tr>';
 				table_body += '<td>';
@@ -167,7 +166,6 @@ $(window).load(function() {
 	function createLasActivityTable(activityData){
 		var table_body = '<table border="1"><thead><tr><th>Gametag</th><th>Kills</th><th>Assists</th><th>Deaths</th><th>K/D Ratio</th><th>Best Spree</th><th>Map</th><th>Game Type</th><th>Variant</th><th>Date</th></tr></thead><tbody>';
 		$.each(activityData, function (i, player) {
-			//console.log('[' + i + ']' + player.fields.name);
 			table_body += '<tr>';
 			table_body += '<td>';
 			table_body += '<a href="profile.html?id=' + player.pk + '">' + player.fields.name + '</a>';
@@ -210,5 +208,41 @@ $(window).load(function() {
 
 		$('.activity-table').html(table_body);
 	};
+
+	function pushPlayers(playersList){
+		$.each(playersList, function (i, player) {
+			var data = {};
+			data = player.fields;
+			data.value = player.fields.name;
+			data.id = player.pk;
+			gamertags.push(data);
+		});
+	}
+ 
+    $( "#gamertag" ).autocomplete({
+      minLength: 3,
+      source: gamertags,
+      focus: function(event, ui) {
+        $("#gamertag").val(ui.item.name);
+        return false;
+      },
+      select: function(event, ui) {
+        $("#gamertag").val(ui.item.name);
+        $("#gamertag-id").val(ui.item.name);
+        $("#gamertag-description")
+	        .html("<b>Kills:</b> " + ui.item.kills + "<br/>" +
+				"<b>Deaths:</b> " + ui.item.deaths + "<br/>" +
+				"<b>K/D Ratio:</b> " + parseFloat(ui.item.kills / ui.item.deaths).toFixed(2) + "<br/>" +
+				"<b>Last seen:</b> " + new Date(ui.item.modification_date).toLocaleString() + "<br/>" +
+				"Playing <b>" + ui.item.last_game_variant + "</b> on <b>" + ui.item.last_game_map + "</b><br/><br/>");
+ 
+        return false;
+      }
+    })
+    .autocomplete( "instance" )._renderItem = function(ul, item) {
+      return $("<li>")
+        .append("<div>" + item.name + "<br/>Kills: " + item.kills + "</div>")
+        .appendTo(ul);
+    };
 
 });
