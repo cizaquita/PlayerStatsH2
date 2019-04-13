@@ -5,6 +5,7 @@ from django.db import models
 class Player(models.Model):
 	"""docstring for Player"""
 	name = models.CharField(max_length=100, unique=True)
+	isMember = models.BooleanField(default=False)
 	#place = models.CharField(max_length=200)
 	#average_life = models.CharField(max_length=200)
 	best_spree = models.IntegerField(default=0, null=True)
@@ -25,6 +26,9 @@ class Player(models.Model):
 	last_game_type = models.CharField(max_length=100, null=True, default='None')
 	last_game_variant = models.CharField(max_length=100, null=True, default='None')
 
+	#tournaments
+
+
 	def __str__(self):
 		return self.name
 
@@ -32,6 +36,15 @@ class File(models.Model):
 	"""docstring for File"""
 	name = models.CharField(max_length=100, unique=True)
 	content = models.TextField(blank=True, null=True)
+
+	def __str__(self):
+		return self.name
+
+class Tournament(models.Model):
+	"""docstring for File"""
+	name = models.CharField(max_length=100, unique=True)
+	description = models.CharField(max_length=200, unique=True)
+	participants = models.ManyToManyField(Player)
 
 	def __str__(self):
 		return self.name
