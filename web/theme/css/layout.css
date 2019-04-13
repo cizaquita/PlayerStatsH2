@@ -56,6 +56,15 @@ table{
 .center {
 	text-align: center;
 }
+.ui-tooltip {
+    padding: 0px 0px;
+    color: #8EB1CF;
+    background: #081327;
+    border: 2px solid white;
+    font: 12px conduit_light, Arial;
+    box-shadow: 0 0 2px white;
+}
+
 
 /*** BACKGROUND ***/
 

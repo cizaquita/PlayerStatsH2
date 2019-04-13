@@ -19,6 +19,21 @@ $(window).load(function() {
 		});
 	}
 
+	// Tooltip 
+    $(document).tooltip({
+      position: {
+        my: "left top",
+        at: "left bottom",
+        using: function(position, feedback) {
+          $(this).css(position);
+          $("<div>")
+            .addClass(feedback.vertical)
+            .addClass(feedback.horizontal)
+            .appendTo(this);
+        }
+      }
+    });
+
 	// get dedi/peer counts from server
 	$.getJSON(playerStats)
 		.done(function(data){
@@ -63,6 +78,8 @@ $(window).load(function() {
 			table_body += '<tr>';
 			table_body += '<td>';
 			table_body += '<a href="profile.html?id=' + player.pk + '">' + player.fields.name + '</a>';
+				if (player.fields.isMember)
+					table_body += '<img title="Verified member" alt="Verified member" class="link-icon" src="./theme/images/icons/verified.png"/>';
 			table_body += '</td>';
 			table_body += '<td>';
 			table_body += player.fields.kills;
@@ -88,6 +105,8 @@ $(window).load(function() {
 			table_body += '<tr>';
 			table_body += '<td>';
 			table_body += '<a href="profile.html?id=' + player.pk + '">' + player.fields.name + '</a>';
+				if (player.fields.isMember)
+					table_body += '<img title="Verified member" alt="Verified member" class="link-icon" src="./theme/images/icons/verified.png"/>';
 			table_body += '</td>';
 			table_body += '<td>';
 			table_body += player.fields.best_spree;
@@ -112,11 +131,16 @@ $(window).load(function() {
 
 	function createClowKillsTable(killsData){		
 		var table_body = '<table border="1"><thead><tr><th>Gametag</th><th>Kills</th><th>Deaths</th><th>K/D Ratio</th></tr></thead><tbody>';
+		var membersCounter = 0;
 		$.each(killsData, function (i, player) {
 			if (player.fields.name.toLowerCase().indexOf('clow') > - 1) {				
 				table_body += '<tr>';
 				table_body += '<td>';
 				table_body += '<a href="profile.html?id=' + player.pk + '">' + player.fields.name + '</a>';
+				if (player.fields.isMember){
+					membersCounter++;
+					table_body += '<img title="Verified member" alt="Verified member" class="link-icon" src="./theme/images/icons/verified.png"/>';
+				}
 				table_body += '</td>';
 				table_body += '<td>';
 				table_body += player.fields.kills;
@@ -130,7 +154,7 @@ $(window).load(function() {
 				table_body += '</tr>';
 			}
 		})
-		table_body += '</tbody></table>'
+		table_body += '</tbody></table><br/><p><b>' + membersCounter + ' clan members.</b></p>';
 
 		$('.clow-kills-table').html(table_body);
 	};
@@ -142,6 +166,8 @@ $(window).load(function() {
 				table_body += '<tr>';
 				table_body += '<td>';
 				table_body += '<a href="profile.html?id=' + player.pk + '">' + player.fields.name + '</a>';
+				if (player.fields.isMember)
+					table_body += '<img title="Verified member" alt="Verified member" class="link-icon" src="./theme/images/icons/verified.png"/>';
 				table_body += '</td>';
 				table_body += '<td>';
 				table_body += player.fields.best_spree;
@@ -169,6 +195,8 @@ $(window).load(function() {
 			table_body += '<tr>';
 			table_body += '<td>';
 			table_body += '<a href="profile.html?id=' + player.pk + '">' + player.fields.name + '</a>';
+			if (player.fields.isMember)
+				table_body += '<img title="Verified member" alt="Verified member" class="link-icon" src="./theme/images/icons/verified.png"/>';
 			table_body += '</td>';
 			table_body += '<td>';
 			table_body += player.fields.kills;
