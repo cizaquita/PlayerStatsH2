@@ -1,0 +1,4 @@
+django
+apscheduler
+requests
+django-adminlte2
