@@ -10,7 +10,9 @@ from django.utils import timezone
 #Check data, new stats to be saved
 def check_new_data():
     #El ultimo archivo creado en la carpeta de estadísticas
-    files_root = 'C:\\Users\\Acer\\Desktop\\H2Server\\stats\\'
+    files_root = 'C:\\Program Files (x86)\\Microsoft Games\\Halo 2 Dedicated Server\\Stats\\'
+    #files_root = 'C:\\Users\\Acer\\Desktop\\H2Server\\stats\\'
+    #C:\Program Files (x86)\Microsoft Games\Halo 2 Dedicated Server\Stats
     list_of_files = glob.glob(files_root + '*') # * means all if need specific format then *.csv
     latest_file = max(list_of_files, key=os.path.getctime)
     #latest_file_path = files_root + latest_file
