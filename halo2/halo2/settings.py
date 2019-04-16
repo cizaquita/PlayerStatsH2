@@ -149,3 +149,4 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'halo2', 'static')
 #STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 CORS_ORIGIN_ALLOW_ALL = True
+X_FRAME_OPTIONS = 'ALLOW-FROM http://cp.clanclow.tk'

@@ -269,7 +269,7 @@ $(window).load(function() {
     })
     .autocomplete( "instance" )._renderItem = function(ul, item) {
       return $("<li>")
-        .append("<div>" + item.name + "<br/>Kills: " + item.kills + "</div>")
+        .append("<div>" + item.name + "<br/>[" + item.id + "]</div>")
         .appendTo(ul);
     };
 

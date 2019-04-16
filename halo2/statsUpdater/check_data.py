@@ -52,7 +52,7 @@ def check_new_data():
                     get_player.best_spree_game_type = game_type
                     get_player.best_spree_game_variant = game_variant
 
-                get_player.score = get_player.score + int(player.getElementsByTagName("Score")[0].firstChild.data)
+                #get_player.score = get_player.score + int(player.getElementsByTagName("Score")[0].firstChild.data)
                 get_player.kills = get_player.kills + int(player.getElementsByTagName("Kills")[0].firstChild.data)
                 get_player.assists = get_player.assists + int(player.getElementsByTagName("Assists")[0].firstChild.data)
                 get_player.deaths += int(player.getElementsByTagName("Deaths")[0].firstChild.data)
@@ -71,8 +71,8 @@ def check_new_data():
             except Exception as e:
                 new_player = Player(name=pname)
 
-                print("SCORE: " + player.getElementsByTagName("Score")[0].firstChild.data)
-                new_player.score += int(player.getElementsByTagName("Score")[0].firstChild.data)
+                #print("SCORE: " + player.getElementsByTagName("Score")[0].firstChild.data)
+                #new_player.score += int(player.getElementsByTagName("Score")[0].firstChild.data)
                 new_player.kills += int(player.getElementsByTagName("Kills")[0].firstChild.data)
                 new_player.assists += int(player.getElementsByTagName("Assists")[0].firstChild.data)
                 new_player.deaths += int(player.getElementsByTagName("Deaths")[0].firstChild.data)
