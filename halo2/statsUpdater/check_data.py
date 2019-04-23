@@ -27,7 +27,7 @@ def check_new_data():
             newText=f.read().replace("", "")
         with open(latest_file, "w", encoding='UTF8') as f:
             f.write(newText)
-        new_file.content = newText
+        new_file.content = 'Saving DB space.'#newText
         new_file.save()
 
         doc = minidom.parse(latest_file)
