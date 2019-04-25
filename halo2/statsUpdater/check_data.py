@@ -46,7 +46,7 @@ def check_new_data():
             pname = player.getElementsByTagName("Name")[0].firstChild.data
             try:
                 get_player = Player.objects.get(name=pname)
-                pbest_spree = int(player.getElementsByTagName("Best_Spree")[0].firstChild.data)
+                pbest_spree = int(player.getElementsByTagName("Best_Spree")[0].firstChild.data) if player.getElementsByTagName("Best_Spree")[0].firstChild is not None else 0
                 # Update best spree
                 if get_player.best_spree <  pbest_spree:
                     get_player.best_spree = pbest_spree
