@@ -10,8 +10,8 @@ from django.utils import timezone
 #Check data, new stats to be saved
 def check_new_data():
     #El ultimo archivo creado en la carpeta de estadísticas
-    files_root = 'C:\\Program Files (x86)\\Microsoft Games\\Halo 2 Dedicated Server\\Stats\\'
-    #files_root = 'C:\\Users\\Acer\\Desktop\\H2Server\\stats\\'
+    #files_root = 'C:\\Program Files (x86)\\Microsoft Games\\Halo 2 Dedicated Server\\Stats\\'
+    files_root = 'C:\\Users\\Acer\\Desktop\\h2server\\'
     #C:\Program Files (x86)\Microsoft Games\Halo 2 Dedicated Server\Stats
     list_of_files = glob.glob(files_root + '*') # * means all if need specific format then *.csv
     latest_file = max(list_of_files, key=os.path.getctime)
@@ -46,7 +46,12 @@ def check_new_data():
             pname = player.getElementsByTagName("Name")[0].firstChild.data
             try:
                 get_player = Player.objects.get(name=pname)
-                pbest_spree = int(player.getElementsByTagName("Best_Spree")[0].firstChild.data) if player.getElementsByTagName("Best_Spree")[0].firstChild is not None else 0
+
+                if not player.getElementsByTagName("Best_Spree"):
+                    pbest_spree = 0
+                else:
+                    pbest_spree = int(player.getElementsByTagName("Best_Spree")[0].firstChild.data)
+                    
                 # Update best spree
                 if get_player.best_spree <  pbest_spree:
                     get_player.best_spree = pbest_spree
