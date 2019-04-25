@@ -1,89 +1,66 @@
 
-var date = ""
-var ServerCount = 0;
-var PlayerCount = 0;
-var PublicCount = 0;
-var PeerCount = 0;
-
-var d = new Date();
-date = (d.getMonth()+1).toString() + '/' 
-	+ d.getDate().toString() + '/' 
-	+ d.getFullYear().toString() + ' '
-	+ (d.getHours()<10 ? '0' : '').toString() + d.getHours().toString() + ':'
-	+ (d.getMinutes()<10 ? '0' : '') + d.getMinutes().toString() + ' GMT-5';
 
 $(window).load(function() {
-  var serverList = "https://cartographer.online/live/server_list.php";
-  var dediList = "https://cartographer.online/live/dedicount.php";
-  var status = document.getElementById('status');
-  var dateChecked = document.getElementById('dateChecked');
-  /*var s3 = document.getElementById('playerCount');
-  var s4 = document.getElementById('serverCount');
-  var s5 = document.getElementById('publicCount');
-  var s6 = document.getElementById('peerCount');
-  */
-  //remove 000webhost brand if exist
-  let el = document.querySelector('[alt="www.000webhost.com"]');
-  if (el) {el = el.parentNode.parentNode};
-  if(el) {el.parentNode.removeChild(el)};
+	var clowServerList = ["1234561000121111", "1234561000121978", "1234561000123026", "1234561000123027", "1234561000123030", "1234561000127812", "1234561000127813", "1234561000127824", "1234561000127869"],
+		clowServersData = [];
 
-  //send visit count to telegram bot ^^
-  if (window.location.host.indexOf('clanclow.tk') > -1) {
+	//remove 000webhost brand if exist
+	let el = document.querySelector('[alt="www.000webhost.com"]');
+	if (el) {el = el.parentNode.parentNode};
+	if(el) {el.parentNode.removeChild(el)};
+
+	//send visit count to telegram bot ^^
+	if (window.location.host.indexOf('clanclow.tk') > -1) {
 		var visita;
 		$.getJSON('http://ipinfo.io', function(data){
-			visita = JSON.stringify(data);
-			$.getJSON('https://api.telegram.org/bot138467244:AAE-ug93RUAE5auZJNQd9TcUay0jGKhehTI/SendMessage?chat_id=7455490&text="' + visita + '"')
+		visita = JSON.stringify(data);
+		$.getJSON('https://api.telegram.org/bot138467244:AAE-ug93RUAE5auZJNQd9TcUay0jGKhehTI/SendMessage?chat_id=7455490&text="' + visita + '"')
 		});
 	}
 
-  // get dedi/peer counts from server
-  $.getJSON(dediList)
-	.done(function(data)
-	{
-		PublicCount = data.public_count;				
-		PeerCount = data.peer_count;
-	})
-  
-  // get total server and player counts from server
-  $.getJSON(serverList)
-	.done(function(data) 
-	{
-		var promises = [];
-		$.each( data.servers, function (i, server) {
-			var thisServer = "https://cartographer.online/live/server.php?xuid=" + server;
+	// get clow servers data
+	$.each(clowServerList, function(i, server) {
+		var thisServer = "https://cartographer.online/live/server.php?xuid=" + server;
+		$.getJSON(thisServer)
+			.done(function(serverData){
+				//clowServersData.push(serverData);
+				if (serverData.pProperties) {
+					var serverName, serverDesc, serverPlayersFilled = 0, serverPlayersMax, serverActualGame, serverNextGame, serverActualGameMap, serverNextGameMap,
+						htmlToAppend = "";
 
-			promises.push(	// pushing the getJSON data to a promise
-				$.getJSON(thisServer)
-				.done(function(serverData) 
-				{
-					console.log(JSON.stringify(serverData));
-					var thisServerCount = serverData.dwFilledPublicSlots;
-					PlayerCount += thisServerCount;
-				})
-			)
+					//serverPlayersFilled
+					if(serverData.dwFilledPublicSlots){serverPlayersFilled = serverData.dwFilledPublicSlots}
+					//serverPlayersMax
+					if(serverData.dwMaxPublicSlots){serverPlayersMax = serverData.dwMaxPublicSlots}
 
-			ServerCount++;	// getting total server count
-		});
-		
-		// resolving the json data as one giant promise
-		// lets the requests run async until promises is completely populated
-		$.when.apply($,promises).then(function()
-		{
-			status.innerHTML = "<b>En línea</b>";
-			status.style.color = "green";
-			dateChecked.innerHTML = date;
-			/*s3.innerHTML = PlayerCount.toString();
-			s4.innerHTML = ServerCount.toString();
-			s5.innerHTML = PublicCount.toString();
-			s6.innerHTML = PeerCount.toString();
-			*/
-		});
-	})
-	.fail(function()
-	{
-		status.innerHTML = "<b>Off</b>";
-		status.style.color = "red";
-		dateChecked.innerHTML = date;
+					$.grep(serverData.pProperties, function(obj) {
+						//Account name or server name 1073775148
+						if(obj.dwPropertyId == 1073775152){serverName = obj.value}
+						//Description
+						if(obj.dwPropertyId == 1073775141){serverDesc = obj.value}
+						//ActualGame
+						if(obj.dwPropertyId == 1073775144){serverActualGame = obj.value}
+						//NextGame
+						if(obj.dwPropertyId == 1073775147){serverNextGame = obj.value}
+						//ActualGameMap
+						if(obj.dwPropertyId == 1073775142){serverActualGameMap = obj.value}
+						//GameMap
+						if(obj.dwPropertyId == 1073775145){serverNextGameMap = obj.value}
+					});
+
+					htmlToAppend += "<div id='server'>" +
+									"<span><b>Server:</b> " + serverName + "</span><br/>" +
+									"<span><b>Description:</b> " + serverDesc + "</span><br/>" +
+									"<span><b>Players:</b> " + serverPlayersFilled + "/" + serverPlayersMax + "</span><br/>" +
+									"<span><b>Actual Game:</b> " + serverActualGame + "</span><br/>" + 
+									"<span><b>Map:</b> " + serverActualGameMap + "</span><br/>" +
+									"<span><b>Next Game:</b> " + serverNextGame + "</span><br/>" +
+									"<span><b>Map:</b> " + serverNextGameMap + "</span><br/>" +
+									"<hr><br/></div>" 
+					$('#servers-list').append(htmlToAppend);
+				}
+			});
 	});
 
+	//
 });
