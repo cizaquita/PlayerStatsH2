@@ -19,7 +19,7 @@ class Player(models.Model):
 	deaths = models.IntegerField(default=0, null=True)
 	suicides = models.IntegerField(default=0, null=True)
 
-	register_date = models.DateTimeField(auto_now_add=True, editable=False, null=True)
+	register_date = models.DateTimeField(auto_now_add=True, null=True)
 	modification_date = models.DateTimeField(auto_now_add=True, null=True)
 
 	last_game_map = models.CharField(max_length=100, null=True, default='None')
