@@ -360,167 +360,167 @@ $(window).load(function() {
         let returnMedal = 'noLevel';
         // 1 to 10
         if(level && (level > 0 && level < 3))
-            returnMedal = '<img title="Level 1 WOOD medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 1.1.png"/>';
+            returnMedal = '<img title="Category 1 WOOD medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 1.1.png"/>';
         if(level && (level > 2 && level < 5))
-            returnMedal = '<img title="Level 1 BRONZE medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 1.2.png"/>';
+            returnMedal = '<img title="Category 1 BRONZE medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 1.2.png"/>';
         if(level && (level > 4 && level < 7))
-            returnMedal = '<img title="Level 1 SILVER medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 1.3.png"/>';
+            returnMedal = '<img title="Category 1 SILVER medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 1.3.png"/>';
         if(level && (level > 6 && level < 9))
-            returnMedal = '<img title="Level 1 GOLD medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 1.4.png"/>';
+            returnMedal = '<img title="Category 1 GOLD medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 1.4.png"/>';
         if(level && (level > 8 && level < 11))
-            returnMedal = '<img title="Level 1 DIAMOND medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 1.5.png"/>';
+            returnMedal = '<img title="Category 1 DIAMOND medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 1.5.png"/>';
 
         // 10 to 20
         if(level && (level > 10 && level < 13))
-            returnMedal = '<img title="Level 2 WOOD medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 2.1.png"/>';
+            returnMedal = '<img title="Category 2 WOOD medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 2.1.png"/>';
         if(level && (level > 12 && level < 15))
-            returnMedal = '<img title="Level 2 BRONZE medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 2.2.png"/>';
+            returnMedal = '<img title="Category 2 BRONZE medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 2.2.png"/>';
         if(level && (level > 14 && level < 17))
-            returnMedal = '<img title="Level 2 SILVER medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 2.3.png"/>';
+            returnMedal = '<img title="Category 2 SILVER medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 2.3.png"/>';
         if(level && (level > 16 && level < 19))
-            returnMedal = '<img title="Level 2 GOLD medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 2.4.png"/>';
+            returnMedal = '<img title="Category 2 GOLD medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 2.4.png"/>';
         if(level && (level > 18 && level < 21))
-            returnMedal = '<img title="Level 2 DIAMOND medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 2.5.png"/>';
+            returnMedal = '<img title="Category 2 DIAMOND medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 2.5.png"/>';
 
         // 20 to 30
         if(level && (level > 20 && level < 23))
-            returnMedal = '<img title="Level 3 WOOD medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 3.1.png"/>';
+            returnMedal = '<img title="Category 3 WOOD medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 3.1.png"/>';
         if(level && (level > 22 && level < 25))
-            returnMedal = '<img title="Level 3 BRONZE medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 3.2.png"/>';
+            returnMedal = '<img title="Category 3 BRONZE medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 3.2.png"/>';
         if(level && (level > 24 && level < 27))
-            returnMedal = '<img title="Level 3 SILVER medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 3.3.png"/>';
+            returnMedal = '<img title="Category 3 SILVER medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 3.3.png"/>';
         if(level && (level > 26 && level < 29))
-            returnMedal = '<img title="Level 3 GOLD medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 3.4.png"/>';
+            returnMedal = '<img title="Category 3 GOLD medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 3.4.png"/>';
         if(level && (level > 28 && level < 31))
-            returnMedal = '<img title="Level 3 DIAMOND medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 3.5.png"/>';
+            returnMedal = '<img title="Category 3 DIAMOND medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 3.5.png"/>';
 
 
         // 30
         if(level && (level > 30 && level < 33))
-            returnMedal = '<img title="Level 4 WOOD medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 4.1.png"/>';
+            returnMedal = '<img title="Category 4 WOOD medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 4.1.png"/>';
         if(level && (level > 32 && level < 35))
-            returnMedal = '<img title="Level 4 BRONZE medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 4.2.png"/>';
+            returnMedal = '<img title="Category 4 BRONZE medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 4.2.png"/>';
         if(level && (level > 34 && level < 37))
-            returnMedal = '<img title="Level 4 SILVER medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 4.3.png"/>';
+            returnMedal = '<img title="Category 4 SILVER medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 4.3.png"/>';
         if(level && (level > 36 && level < 39))
-            returnMedal = '<img title="Level 4 GOLD medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 4.4.png"/>';
+            returnMedal = '<img title="Category 4 GOLD medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 4.4.png"/>';
         if(level && (level > 38 && level < 41))
-            returnMedal = '<img title="Level 4 DIAMOND medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 4.5.png"/>';
+            returnMedal = '<img title="Category 4 DIAMOND medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 4.5.png"/>';
 
 
         // 40
         if(level && (level > 40 && level < 43))
-            returnMedal = '<img title="Level 5 WOOD medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 5.1.png"/>';
+            returnMedal = '<img title="Category 5 WOOD medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 5.1.png"/>';
         if(level && (level > 42 && level < 45))
-            returnMedal = '<img title="Level 5 BRONZE medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 5.2.png"/>';
+            returnMedal = '<img title="Category 5 BRONZE medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 5.2.png"/>';
         if(level && (level > 44 && level < 47))
-            returnMedal = '<img title="Level 5 SILVER medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 5.3.png"/>';
+            returnMedal = '<img title="Category 5 SILVER medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 5.3.png"/>';
         if(level && (level > 46 && level < 49))
-            returnMedal = '<img title="Level 5 GOLD medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 5.4.png"/>';
+            returnMedal = '<img title="Category 5 GOLD medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 5.4.png"/>';
         if(level && (level > 48 && level < 51))
-            returnMedal = '<img title="Level 5 DIAMOND medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 5.5.png"/>';
+            returnMedal = '<img title="Category 5 DIAMOND medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 5.5.png"/>';
 
 
         // 50
         if(level && (level > 50 && level < 53))
-            returnMedal = '<img title="Level 6 WOOD medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 6.1.png"/>';
+            returnMedal = '<img title="Category 6 WOOD medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 6.1.png"/>';
         if(level && (level > 52 && level < 55))
-            returnMedal = '<img title="Level 6 BRONZE medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 6.2.png"/>';
+            returnMedal = '<img title="Category 6 BRONZE medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 6.2.png"/>';
         if(level && (level > 54 && level < 57))
-            returnMedal = '<img title="Level 6 SILVER medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 6.3.png"/>';
+            returnMedal = '<img title="Category 6 SILVER medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 6.3.png"/>';
         if(level && (level > 56 && level < 59))
-            returnMedal = '<img title="Level 6 GOLD medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 6.4.png"/>';
+            returnMedal = '<img title="Category 6 GOLD medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 6.4.png"/>';
         if(level && (level > 58 && level < 61))
-            returnMedal = '<img title="Level 6 DIAMOND medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 6.5.png"/>';
+            returnMedal = '<img title="Category 6 DIAMOND medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 6.5.png"/>';
 
         // 60
         if(level && (level > 60 && level < 63))
-            returnMedal = '<img title="Level 7 WOOD medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 7.1.png"/>';
+            returnMedal = '<img title="Category 7 WOOD medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 7.1.png"/>';
         if(level && (level > 62 && level < 65))
-            returnMedal = '<img title="Level 7 BRONZE medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 7.2.png"/>';
+            returnMedal = '<img title="Category 7 BRONZE medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 7.2.png"/>';
         if(level && (level > 64 && level < 67))
-            returnMedal = '<img title="Level 7 SILVER medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 7.3.png"/>';
+            returnMedal = '<img title="Category 7 SILVER medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 7.3.png"/>';
         if(level && (level > 66 && level < 69))
-            returnMedal = '<img title="Level 7 GOLD medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 7.4.png"/>';
+            returnMedal = '<img title="Category 7 GOLD medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 7.4.png"/>';
         if(level && (level > 68 && level < 71))
-            returnMedal = '<img title="Level 7 DIAMOND medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 7.5.png"/>';
+            returnMedal = '<img title="Category 7 DIAMOND medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 7.5.png"/>';
 
         // 70
         if(level && (level > 70 && level < 73))
-            returnMedal = '<img title="Level 8 WOOD medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 8.1.png"/>';
+            returnMedal = '<img title="Category 8 WOOD medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 8.1.png"/>';
         if(level && (level > 72 && level < 75))
-            returnMedal = '<img title="Level 8 BRONZE medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 8.2.png"/>';
+            returnMedal = '<img title="Category 8 BRONZE medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 8.2.png"/>';
         if(level && (level > 74 && level < 77))
-            returnMedal = '<img title="Level 8 SILVER medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 8.3.png"/>';
+            returnMedal = '<img title="Category 8 SILVER medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 8.3.png"/>';
         if(level && (level > 76 && level < 79))
-            returnMedal = '<img title="Level 8 GOLD medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 8.4.png"/>';
+            returnMedal = '<img title="Category 8 GOLD medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 8.4.png"/>';
         if(level && (level > 78 && level < 81))
-            returnMedal = '<img title="Level 8 DIAMOND medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 8.5.png"/>';
+            returnMedal = '<img title="Category 8 DIAMOND medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 8.5.png"/>';
 
         // 80
         if(level && (level > 80 && level < 83))
-            returnMedal = '<img title="Level 9 WOOD medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 9.1.png"/>';
+            returnMedal = '<img title="Category 9 WOOD medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 9.1.png"/>';
         if(level && (level > 82 && level < 85))
-            returnMedal = '<img title="Level 9 BRONZE medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 9.2.png"/>';
+            returnMedal = '<img title="Category 9 BRONZE medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 9.2.png"/>';
         if(level && (level > 84 && level < 87))
-            returnMedal = '<img title="Level 9 SILVER medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 9.3.png"/>';
+            returnMedal = '<img title="Category 9 SILVER medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 9.3.png"/>';
         if(level && (level > 86 && level < 89))
-            returnMedal = '<img title="Level 9 GOLD medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 9.4.png"/>';
+            returnMedal = '<img title="Category 9 GOLD medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 9.4.png"/>';
         if(level && (level > 88 && level < 91))
-            returnMedal = '<img title="Level 9 DIAMOND medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 9.5.png"/>';
+            returnMedal = '<img title="Category 9 DIAMOND medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level 9.5.png"/>';
 
         // 90
         if(level && (level > 90 && level < 93))
-            returnMedal = '<img title="Level SemiPRO WOOD medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level SemiPro.1.png"/>';
+            returnMedal = '<img title="Category SemiPRO WOOD medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level SemiPro.1.png"/>';
         if(level && (level > 92 && level < 95))
-            returnMedal = '<img title="Level SemiPRO BRONZE medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level SemiPro.2.png"/>';
+            returnMedal = '<img title="Category SemiPRO BRONZE medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level SemiPro.2.png"/>';
         if(level && (level > 94 && level < 97))
-            returnMedal = '<img title="Level SemiPRO SILVER medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level SemiPro.3.png"/>';
+            returnMedal = '<img title="Category SemiPRO SILVER medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level SemiPro.3.png"/>';
         if(level && (level > 96 && level < 99))
-            returnMedal = '<img title="Level SemiPRO GOLD medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level SemiPro.4.png"/>';
+            returnMedal = '<img title="Category SemiPRO GOLD medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level SemiPro.4.png"/>';
         if(level && (level > 98 && level < 101))
-            returnMedal = '<img title="Level SemiPRO DIAMOND medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level SemiPro.5.png"/>';
+            returnMedal = '<img title="Category SemiPRO DIAMOND medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level SemiPro.5.png"/>';
 
 
         // 100
         if(level && (level > 100 && level < 103))
-            returnMedal = '<img title="Level PRO WOOD medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level Pro.1.png"/>';
+            returnMedal = '<img title="Category PRO WOOD medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level Pro.1.png"/>';
         if(level && (level > 102 && level < 105))
-            returnMedal = '<img title="Level PRO BRONZE medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level Pro.2.png"/>';
+            returnMedal = '<img title="Category PRO BRONZE medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level Pro.2.png"/>';
         if(level && (level > 104 && level < 107))
-            returnMedal = '<img title="Level PRO SILVER medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level Pro.3.png"/>';
+            returnMedal = '<img title="Category PRO SILVER medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level Pro.3.png"/>';
         if(level && (level > 106 && level < 109))
-            returnMedal = '<img title="Level PRO GOLD medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level Pro.4.png"/>';
+            returnMedal = '<img title="Category PRO GOLD medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level Pro.4.png"/>';
         if(level && (level > 108 && level < 111))
-            returnMedal = '<img title="Level PRO DIAMOND medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level Pro.5.png"/>';
+            returnMedal = '<img title="Category PRO DIAMOND medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level Pro.5.png"/>';
 
 
         // 110
         if(level && (level > 110 && level < 113))
-            returnMedal = '<img title="Level SuperPRO WOOD medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level SuperPro.1.png"/>';
+            returnMedal = '<img title="Category SuperPRO WOOD medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level SuperPro.1.png"/>';
         if(level && (level > 112 && level < 115))
-            returnMedal = '<img title="Level SuperPRO BRONZE medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level SuperPro.2.png"/>';
+            returnMedal = '<img title="Category SuperPRO BRONZE medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level SuperPro.2.png"/>';
         if(level && (level > 114 && level < 117))
-            returnMedal = '<img title="Level SuperPRO SILVER medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level SuperPro.3.png"/>';
+            returnMedal = '<img title="Category SuperPRO SILVER medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level SuperPro.3.png"/>';
         if(level && (level > 116 && level < 119))
-            returnMedal = '<img title="Level SuperPRO GOLD medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level SuperPro.4.png"/>';
+            returnMedal = '<img title="Category SuperPRO GOLD medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level SuperPro.4.png"/>';
         if(level && (level > 118 && level < 121))
-            returnMedal = '<img title="Level SuperPRO DIAMOND medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level SuperPro.5.png"/>';
+            returnMedal = '<img title="Category SuperPRO DIAMOND medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level SuperPro.5.png"/>';
 
         // 120
         if(level && (level > 120 && level < 123))
-            returnMedal = '<img title="Level UltraPRO WOOD medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level UltraPro.1.png"/>';
+            returnMedal = '<img title="Category UltraPRO WOOD medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level UltraPro.1.png"/>';
         if(level && (level > 122 && level < 125))
-            returnMedal = '<img title="Level UltraPRO BRONZE medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level UltraPro.2.png"/>';
+            returnMedal = '<img title="Category UltraPRO BRONZE medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level UltraPro.2.png"/>';
         if(level && (level > 124 && level < 127))
-            returnMedal = '<img title="Level UltraPRO SILVER medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level UltraPro.3.png"/>';
+            returnMedal = '<img title="Category UltraPRO SILVER medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level UltraPro.3.png"/>';
         if(level && (level > 126 && level < 129))
-            returnMedal = '<img title="Level UltraPRO GOLD medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level UltraPro.4.png"/>';
+            returnMedal = '<img title="Category UltraPRO GOLD medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level UltraPro.4.png"/>';
         if(level && (level > 128 && level < 131))
-            returnMedal = '<img title="Level UltraPRO DIAMOND medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level UltraPro.5.png"/>';
+            returnMedal = '<img title="Category UltraPRO DIAMOND medal!" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/Level UltraPro.5.png"/>';
 
 
-        return returnMedal;//'<img title="Level ' + level + ' medal" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/' + medalal + '.png"/>';
+        return returnMedal;//'<img title="Category ' + level + ' medal" class="link-icon" width="' + size + 'px" height="' + size + 'px" src="./theme/images/medals/' + medalal + '.png"/>';
     }
 
 });
