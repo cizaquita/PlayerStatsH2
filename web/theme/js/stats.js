@@ -1,11 +1,12 @@
 $(window).load(function() {
-    //var playerStats = "http://138.68.233.236:2010/get_players/";
     var apiURL = "http://134.209.212.27:8080/",
+    //var apiURL = "http://127.0.0.1:8000/",
         clowPlayers = apiURL + "clow_players/",
         topKills = apiURL + "top_kills/",
         topSpree = apiURL + "top_spree/",
         lastActivity = apiURL + "last_activity/",
-        searchPlayer = apiURL + "search_player/?q=";
+        searchPlayer = apiURL + "search_player/?q=",
+        getMOTDapi = apiURL + "get_motd/";
 
     //remove 000webhost brand if exist
     let el = document.querySelector('[alt="www.000webhost.com"]');
@@ -40,6 +41,8 @@ $(window).load(function() {
             }
         }
     });
+    //message of the day
+    getMOTD();
 
     // get dedi/peer counts from server
     // ClowPlayers
@@ -122,6 +125,7 @@ $(window).load(function() {
                 q: request.term
             },
             success: function(data) {
+                getMOTD();
                 response(JSON.parse(data));
                 }
             });
@@ -332,6 +336,23 @@ $(window).load(function() {
 
         $('.activity-table').html(table_body);
     };
+
+    function getMOTD(){
+
+        // MOTD
+        $.getJSON(getMOTDapi)
+            .done(function(data){
+                data = JSON.parse(data);
+                let last = data.sort(function(a, b) {
+                    return new Date(a.fields.creation_date).getTime() - new Date(b.fields.creation_date).getTime();
+                });
+                $.each(last, function(i, motd) {
+                    $('#motd').html('<b>' + motd.fields.title + ':</b> ' + motd.fields.message + '<p style="font-size: 10px;">' + new Date(motd.fields.creation_date).toLocaleString() + '<p/>');
+                });
+            })
+            .fail(function(data){
+            });
+    }
 
     function asignarMedalla(level, size){
         //TODO: Refacto to make it dynamic

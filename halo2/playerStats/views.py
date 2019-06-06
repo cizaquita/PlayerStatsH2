@@ -115,3 +115,43 @@ def last_activity(request):
 			response = JsonResponse({'status':'error', 'response':'No se encuentran registros de PLAYERS o ' + str(e)})
 			response['Access-Control-Allow-Origin'] = '*'
 			return response
+
+# Last MOTD
+@xframe_options_exempt
+@csrf_exempt
+def get_motd(request):
+	if request.method == "GET":
+		try:
+			motd = (MOTD.objects.order_by('-creation_date')[:5])
+			data = serializers.serialize('json', list(motd))
+			response = JsonResponse(data, safe=False)
+			response['Access-Control-Allow-Origin'] = '*'
+			return response
+
+		except Exception as e:
+			response = JsonResponse({'status':'error', 'response':'No se encuentran registros de MOTD o ' + str(e)})
+			response['Access-Control-Allow-Origin'] = '*'
+			return response
+# Last MOTD
+@xframe_options_exempt
+@csrf_exempt
+def set_motd(request):
+	if request.method == "GET":
+		try:
+			title = request.GET["title"]
+			message = request.GET["message"]
+			if (title and len(title) > 3) and (message and len(message) > 10 ):
+				motd = MOTD(title=title, message=message)
+				motd.save()
+				response = JsonResponse({'status':'ok'})
+				response['Access-Control-Allow-Origin'] = '*'
+				return response
+
+			response = JsonResponse({'status':'error', 'response':'No data.'})
+			response['Access-Control-Allow-Origin'] = '*'
+			return response
+
+		except Exception as e:
+			response = JsonResponse({'status':'error', 'response':'No se encuentran registros de MOTD o ' + str(e)})
+			response['Access-Control-Allow-Origin'] = '*'
+			return response

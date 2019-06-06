@@ -9,4 +9,6 @@ urlpatterns = [
 	path('top_spree/', views.top_spree, name='top_spree'),
 	path('search_player/', views.search_player, name='search_player'),
 	path('last_activity/', views.last_activity, name='last_activity'),
+	path('get_motd/', views.get_motd, name='get_motd'),
+	path('set_motd/', views.set_motd, name='set_motd'),
 ]
