@@ -75,6 +75,20 @@ $(window).load(function() {
             });
             createKillsTable(killsData);
 
+            let ratioData = data.sort(function(a, b) {
+                let ratioa = (a.fields.kills / a.fields.deaths);
+                let ratiob = (b.fields.kills / b.fields.deaths);
+                return ratiob - ratioa;
+            });
+            createRatioTable(ratioData);
+
+            let levelData = data.sort(function(a, b) {
+                let levela = (a.fields.kills * (a.fields.kills / a.fields.deaths)) / 1000;
+                let levelb = (b.fields.kills * (b.fields.kills / b.fields.deaths)) / 1000;
+                return levelb - levela;
+            });
+            createLevelTable(levelData);
+
         })
         .fail(function(data){
             $('.kills-table').html('<p>Server off.</p>');
@@ -125,7 +139,7 @@ $(window).load(function() {
                 q: request.term
             },
             success: function(data) {
-                getMOTD();
+                //getMOTD();
                 response(JSON.parse(data));
                 }
             });
@@ -191,6 +205,80 @@ $(window).load(function() {
         table_body += '</tbody></table>'
 
         $('.kills-table').html(table_body);
+    };
+
+//TABLE CREATION
+    function createLevelTable(levelData) {
+        var table_body = '<table border="1"><thead><tr><th>Gametag</th><th>Kills</th><th>Deaths</th><th>K/D Ratio</th><th>Level</th><th>Medal</th></tr></thead><tbody>';
+        $.each(levelData, function(i, player) {
+            let kdRatio = parseFloat(player.fields.kills / player.fields.deaths).toFixed(2),
+                multiplier = parseFloat(player.fields.kills * kdRatio).toFixed(0),
+                level = Math.round(multiplier/1000).toFixed(0);
+            table_body += '<tr>';
+            table_body += '<td>';
+            table_body += '<a href="profile.html?id=' + player.pk + '">' + player.fields.name + '</a>';
+            //if (player.fields.isMember)
+                //table_body += '<img title="Verified member" alt="Verified member" class="link-icon" width="24px" height="24px" src="./theme/images/icons/verified.png"/>';
+            table_body += '</td>';
+            table_body += '<td>';
+            table_body += player.fields.kills;
+            table_body += '</td>';
+            table_body += '<td>';
+            table_body += player.fields.deaths;
+            table_body += '</td>';
+            table_body += '<td>';
+            table_body += kdRatio;
+            table_body += '</td>';
+            table_body += '<td>';
+            table_body += level;
+            table_body += '</td>';
+            table_body += '<td style="text-align: center;">';
+            table_body += asignarMedalla(level, 30);
+            table_body += '</td>';
+            table_body += '</tr>';
+            if (i == 50)
+                return false;
+        })
+        table_body += '</tbody></table>'
+
+        $('.level-table').html(table_body);
+    };
+
+//TABLE CREATION
+    function createRatioTable(levelData) {
+        var table_body = '<table border="1"><thead><tr><th>Gametag</th><th>Kills</th><th>Deaths</th><th>K/D Ratio</th><th>Level</th><th>Medal</th></tr></thead><tbody>';
+        $.each(levelData, function(i, player) {
+            let kdRatio = parseFloat(player.fields.kills / player.fields.deaths).toFixed(2),
+                multiplier = parseFloat(player.fields.kills * kdRatio).toFixed(0),
+                level = Math.round(multiplier/1000).toFixed(0);
+            table_body += '<tr>';
+            table_body += '<td>';
+            table_body += '<a href="profile.html?id=' + player.pk + '">' + player.fields.name + '</a>';
+            //if (player.fields.isMember)
+                //table_body += '<img title="Verified member" alt="Verified member" class="link-icon" width="24px" height="24px" src="./theme/images/icons/verified.png"/>';
+            table_body += '</td>';
+            table_body += '<td>';
+            table_body += player.fields.kills;
+            table_body += '</td>';
+            table_body += '<td>';
+            table_body += player.fields.deaths;
+            table_body += '</td>';
+            table_body += '<td>';
+            table_body += kdRatio;
+            table_body += '</td>';
+            table_body += '<td>';
+            table_body += level;
+            table_body += '</td>';
+            table_body += '<td style="text-align: center;">';
+            table_body += asignarMedalla(level, 30);
+            table_body += '</td>';
+            table_body += '</tr>';
+            if (i == 50)
+                return false;
+        })
+        table_body += '</tbody></table>'
+
+        $('.ratio-table').html(table_body);
     };
 
     function createSpreeTable(spreeData) {
@@ -284,7 +372,7 @@ $(window).load(function() {
     };
 
     function createLasActivityTable(activityData) {
-        var table_body = '<table border="1"><thead><tr><th>Gametag</th><th>Kills</th><th>Assists</th><th>Deaths</th><th>K/D Ratio</th><th>Best Spree</th><th>Map</th><th>Game Type</th><th>Variant</th><th>Date</th></tr></thead><tbody>';
+        var table_body = '<table border="1"><thead><tr><th>Gametag</th><th>Kills</th><th>Assists</th><th>Deaths</th><th>K/D Ratio</th><th>Medal</th><th>Best Spree</th><th>Map</th><th>Game Type</th><th>Variant</th><th>Date</th></tr></thead><tbody>';
         $.each(activityData, function(i, player) {
             let kdRatio = parseFloat(player.fields.kills / player.fields.deaths).toFixed(2),
                 multiplier = parseFloat(player.fields.kills * kdRatio).toFixed(0),
