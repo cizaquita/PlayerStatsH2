@@ -1,6 +1,6 @@
 $(window).load(function() {
-    //var apiURL = "http://134.209.212.27:8080/",
-    var apiURL = "http://127.0.0.1:8000/",
+    var apiURL = "http://134.209.212.27:8080/",
+    //var apiURL = "http://127.0.0.1:8000/",
         clowPlayers = apiURL + "clow_players/",
         topKills = apiURL + "top_kills/",
         topSpree = apiURL + "top_spree/",
