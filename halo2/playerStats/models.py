@@ -6,6 +6,7 @@ class Player(models.Model):
 	"""docstring for Player"""
 	name = models.CharField(max_length=100, unique=True)
 	isMember = models.BooleanField(default=False)
+	isVIP = models.BooleanField(default=False)
 	#place = models.CharField(max_length=200)
 	#average_life = models.CharField(max_length=200)
 	best_spree = models.IntegerField(default=0, null=True)

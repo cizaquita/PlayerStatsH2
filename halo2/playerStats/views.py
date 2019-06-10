@@ -138,9 +138,10 @@ def get_motd(request):
 def set_motd(request):
 	if request.method == "GET":
 		try:
+			token = request.GET["token"]
 			title = request.GET["title"]
 			message = request.GET["message"]
-			if (title and len(title) > 3) and (message and len(message) > 10 ):
+			if (title and len(title) > 3) and (message and len(message) > 10) and (token == 'chris420') :
 				motd = MOTD(title=title, message=message)
 				motd.save()
 				response = JsonResponse({'status':'ok'})
@@ -155,3 +156,71 @@ def set_motd(request):
 			response = JsonResponse({'status':'error', 'response':'No se encuentran registros de MOTD o ' + str(e)})
 			response['Access-Control-Allow-Origin'] = '*'
 			return response
+
+# Update VIP
+@xframe_options_exempt
+@csrf_exempt
+def update_vip(request):
+	if request.method == "GET":
+		try:
+			token = request.GET["token"]
+			if (token == 'chris420' ):
+				players = (Player.objects.order_by('-kills')[:20])
+				Player.objects.filter(pk__in=players).update(isVIP = True)
+
+				response = JsonResponse({'status':'ok'})
+				response['Access-Control-Allow-Origin'] = '*'
+				return response
+
+			response = JsonResponse({'status':'error', 'response':'No data.'})
+			response['Access-Control-Allow-Origin'] = '*'
+			return response
+
+		except Exception as e:
+			response = JsonResponse({'status':'error', 'response':'Error actualizando miembros VIP o ' + str(e)})
+			response['Access-Control-Allow-Origin'] = '*'
+			return response
+
+
+
+# Search player
+@csrf_exempt
+def get_player(request):
+	if request.method == "GET":
+		try:
+			id = request.GET["id"]
+			players = Player.objects.filter(pk = id)
+			data = serializers.serialize('json', list(players))
+			response = JsonResponse(data, safe=False)
+			response['Access-Control-Allow-Origin'] = '*'
+			return response  		
+		except Exception as e:
+			response = JsonResponse({'status':'error', 'response':'No se encuentran registros de PLAYERS o ' + str(e)})
+			response['Access-Control-Allow-Origin'] = '*'
+			return response
+
+# Update VIP
+@xframe_options_exempt
+@csrf_exempt
+def set_vip(request):
+	if request.method == "GET":
+		try:
+			token = request.GET["token"]
+			id = request.GET["id"]
+
+			if (token == 'chris420' ):
+				player = Player.objects.filter(pk=id).update(isVIP = True)
+
+				response = JsonResponse({'status':'ok'})
+				response['Access-Control-Allow-Origin'] = '*'
+				return response
+
+			response = JsonResponse({'status':'error', 'response':'No data.'})
+			response['Access-Control-Allow-Origin'] = '*'
+			return response
+
+		except Exception as e:
+			response = JsonResponse({'status':'error', 'response':'Error actualizando miembros VIP o ' + str(e)})
+			response['Access-Control-Allow-Origin'] = '*'
+			return response
+

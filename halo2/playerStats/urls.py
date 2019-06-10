@@ -11,4 +11,7 @@ urlpatterns = [
 	path('last_activity/', views.last_activity, name='last_activity'),
 	path('get_motd/', views.get_motd, name='get_motd'),
 	path('set_motd/', views.set_motd, name='set_motd'),
+	path('update_vip/', views.update_vip, name='update_vip'),
+	path('get_player/', views.get_player, name='get_player'),
+	path('set_vip/', views.set_vip, name='set_vip'),
 ]

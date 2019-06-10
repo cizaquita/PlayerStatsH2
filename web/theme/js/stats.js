@@ -1,6 +1,6 @@
 $(window).load(function() {
-    var apiURL = "http://134.209.212.27:8080/",
-    //var apiURL = "http://127.0.0.1:8000/",
+    //var apiURL = "http://134.209.212.27:8080/",
+    var apiURL = "http://127.0.0.1:8000/",
         clowPlayers = apiURL + "clow_players/",
         topKills = apiURL + "top_kills/",
         topSpree = apiURL + "top_spree/",
@@ -183,8 +183,6 @@ $(window).load(function() {
             table_body += '<tr>';
             table_body += '<td>';
             table_body += '<a href="profile.html?id=' + player.pk + '">' + player.fields.name + '</a>';
-            //if (player.fields.isMember)
-                //table_body += '<img title="Verified member" alt="Verified member" class="link-icon" width="24px" height="24px" src="./theme/images/icons/verified.png"/>';
             table_body += '</td>';
             table_body += '<td>';
             table_body += player.fields.kills;
@@ -197,6 +195,8 @@ $(window).load(function() {
             table_body += '</td>';
             table_body += '<td style="text-align: center;">';
             table_body += asignarMedalla(level, 30);
+            if (player.fields.isVIP)
+                table_body += '<img title="VIP member" alt="VIP member" class="link-icon" width="24px" height="24px" src="./theme/images/icons/VIP.png"/>';
             table_body += '</td>';
             table_body += '</tr>';
             if (i == 50)
@@ -209,16 +209,18 @@ $(window).load(function() {
 
 //TABLE CREATION
     function createLevelTable(levelData) {
-        var table_body = '<table border="1"><thead><tr><th>Gametag</th><th>Kills</th><th>Deaths</th><th>K/D Ratio</th><th>Level</th><th>Medal</th></tr></thead><tbody>';
+        var table_body = '<table border="1"><thead><tr><th>#</th><th>Gametag</th><th>Kills</th><th>Deaths</th><th>K/D Ratio</th><th>Level</th><th>Medal</th></tr></thead><tbody>',
+            counter = 1;
         $.each(levelData, function(i, player) {
             let kdRatio = parseFloat(player.fields.kills / player.fields.deaths).toFixed(2),
                 multiplier = parseFloat(player.fields.kills * kdRatio).toFixed(0),
                 level = Math.round(multiplier/1000).toFixed(0);
             table_body += '<tr>';
             table_body += '<td>';
+            table_body += counter;
+            table_body += '</td>';
+            table_body += '<td>';
             table_body += '<a href="profile.html?id=' + player.pk + '">' + player.fields.name + '</a>';
-            //if (player.fields.isMember)
-                //table_body += '<img title="Verified member" alt="Verified member" class="link-icon" width="24px" height="24px" src="./theme/images/icons/verified.png"/>';
             table_body += '</td>';
             table_body += '<td>';
             table_body += player.fields.kills;
@@ -234,10 +236,11 @@ $(window).load(function() {
             table_body += '</td>';
             table_body += '<td style="text-align: center;">';
             table_body += asignarMedalla(level, 30);
+            if (player.fields.isVIP)
+                table_body += '<img title="VIP member" alt="VIP member" class="link-icon" width="24px" height="24px" src="./theme/images/icons/VIP.png"/>';
             table_body += '</td>';
             table_body += '</tr>';
-            if (i == 50)
-                return false;
+            counter++;
         })
         table_body += '</tbody></table>'
 
@@ -254,8 +257,6 @@ $(window).load(function() {
             table_body += '<tr>';
             table_body += '<td>';
             table_body += '<a href="profile.html?id=' + player.pk + '">' + player.fields.name + '</a>';
-            //if (player.fields.isMember)
-                //table_body += '<img title="Verified member" alt="Verified member" class="link-icon" width="24px" height="24px" src="./theme/images/icons/verified.png"/>';
             table_body += '</td>';
             table_body += '<td>';
             table_body += player.fields.kills;
@@ -271,6 +272,8 @@ $(window).load(function() {
             table_body += '</td>';
             table_body += '<td style="text-align: center;">';
             table_body += asignarMedalla(level, 30);
+            if (player.fields.isVIP)
+                table_body += '<img title="VIP member" alt="VIP member" class="link-icon" width="24px" height="24px" src="./theme/images/icons/VIP.png"/>';
             table_body += '</td>';
             table_body += '</tr>';
             if (i == 50)
@@ -287,8 +290,6 @@ $(window).load(function() {
             table_body += '<tr>';
             table_body += '<td>';
             table_body += '<a href="profile.html?id=' + player.pk + '">' + player.fields.name + '</a>';
-            //if (player.fields.isMember)
-                //table_body += '<img title="Verified member" alt="Verified member" class="link-icon" width="24px" height="24px" src="./theme/images/icons/verified.png"/>';
             table_body += '</td>';
             table_body += '<td>';
             table_body += player.fields.best_spree;
@@ -380,8 +381,6 @@ $(window).load(function() {
             table_body += '<tr>';
             table_body += '<td>';
             table_body += '<a href="profile.html?id=' + player.pk + '">' + player.fields.name + '</a>';
-            //if (player.fields.isMember)
-                //table_body += '<img title="Verified member" alt="Verified member" class="link-icon" width="24px" height="24px" src="./theme/images/icons/verified.png"/>';
             table_body += '</td>';
             table_body += '<td>';
             table_body += player.fields.kills;
@@ -397,6 +396,8 @@ $(window).load(function() {
             table_body += '</td>';
             table_body += '<td style="text-align: center;">';
             table_body += asignarMedalla(level, 30);
+            if (player.fields.isVIP)
+                table_body += '<img title="VIP member" alt="VIP member" class="link-icon" width="24px" height="24px" src="./theme/images/icons/VIP.png"/>';
             table_body += '</td>';
             table_body += '<td>';
             table_body += player.fields.best_spree;
