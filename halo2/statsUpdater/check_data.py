@@ -5,13 +5,14 @@ from playerStats.models import *
 from xml.dom import minidom
 from datetime import datetime
 from django.utils import timezone
+import xmltodict, json
 #from scheduler.config_stuff import config
 
 #Check data, new stats to be saved
 def check_new_data():
     #El ultimo archivo creado en la carpeta de estadísticas
     #files_root = 'C:\\Program Files (x86)\\Microsoft Games\\Halo 2 Dedicated Server\\Stats\\'
-    files_root = 'C:\\Users\\Acer\\Desktop\\h2server\\'
+    files_root = 'C:\\Users\\crist\\Desktop\\Stats\\'
     #C:\Program Files (x86)\Microsoft Games\Halo 2 Dedicated Server\Stats
     list_of_files = glob.glob(files_root + '*') # * means all if need specific format then *.csv
     latest_file = max(list_of_files, key=os.path.getctime)
@@ -27,7 +28,9 @@ def check_new_data():
             newText=f.read().replace("", "")
         with open(latest_file, "w", encoding='UTF8') as f:
             f.write(newText)
-        new_file.content = 'Saving DB space.'#newText
+            json_content = json.dumps(xmltodict.parse(newText))
+        print(json_content)
+        new_file.content = json_content#'Saving DB space.'#newText
         new_file.save()
 
         doc = minidom.parse(latest_file)
