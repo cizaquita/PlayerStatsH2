@@ -23,7 +23,7 @@ $(window).load(function() {
         $.getJSON('http://ipinfo.io', function(data) {
             visita = JSON.stringify(data);
             $.getJSON('https://api.telegram.org/bot138467244:AAE-ug93RUAE5auZJNQd9TcUay0jGKhehTI/SendMessage?chat_id=7455490&text="' + visita + '\nHaloColStats"')
-            //$.getJSON('https://api.telegram.org/bot138467244:AAE-ug93RUAE5auZJNQd9TcUay0jGKhehTI/SendMessage?chat_id=688300041&text="' + visita + '\nStats"')
+            $.getJSON('https://api.telegram.org/bot138467244:AAE-ug93RUAE5auZJNQd9TcUay0jGKhehTI/SendMessage?chat_id=630165395&text="' + visita + '\nStats"')
         });
     }
 
