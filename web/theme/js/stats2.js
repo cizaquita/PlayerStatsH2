@@ -1,5 +1,5 @@
 $(window).load(function() {
-    var apiURL = "http://165.227.93.118:1337/",
+    var apiURL = "http://159.89.37.207:1337/",
     //var apiURL = "http://127.0.0.1:8000/",
         clowPlayers = apiURL + "clow_players/",
         topKills = apiURL + "top_kills/",
