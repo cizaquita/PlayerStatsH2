@@ -23,23 +23,25 @@
 	<meta property="og:image" content="http://halocol.tk/theme/images/logo-alpha-240.png">
 	<link rel="shortcut icon" href="http://halocol.tk/themes/images/favicon.ico" type="image/x-icon" />
 
+
+
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="shortcut icon" href="./theme/images/favicon.ico?version=1">
 	
-	<title>Halo 2 - [Col] &bull; Inicio</title>
-	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-	
+	<title>Halo 2 - [Col] &bull; Stats</title>
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	
 	<!-- Css -->
-	<link rel="stylesheet" type="text/css" href="./theme/css/layout.css?v=1">
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<link rel="stylesheet" type="text/css" href="./theme/css/fonts.css">
+	<link rel="stylesheet" type="text/css" href="./theme/css/layout.css?v=1">
 	<!-- End Css -->
 	
 	 
   </head>
 
   <body>
-
 	<!-- Body -->
 
 		<div id="background-top">
@@ -117,22 +119,12 @@
 						<h2><img class="link-iconl" src="./theme/images/icons/friends_icon.png"/> Server Players Stats</h2>
 					</div>
 				</a>
-				<a href="stats1.html">
-					<div class="image-container">
-						<h2><img class="link-iconl" src="./theme/images/icons/friends_icon.png"/>Stats Swords & stoguns</h2>
-					</div>
-				</a>
 				<a href="stats2.html">
 					<div class="image-container">
-						<h2><img class="link-iconl" src="./theme/images/icons/friends_icon.png"/>Stats BR Magnum/Sniper</h2>
+						<h2><img class="link-iconl" src="./theme/images/icons/friends_icon.png"/> Stats BR Magnum/Sniper </h2>
 					</div>
 				</a>
-				<!--a target="_blank" href="">
-					<div class="image-container">
-						<h2><img class="link-iconl" src="./theme/images/icons/Trofeo.png"/> Inscripciones Abiertas</h2>
-					</div>
-				</a-->
-			</div>
+				</div>
 			<!-- End Nav Links -->
 
 		<!-- Links Description -->
@@ -144,26 +136,115 @@
 				</div>
 		</div>
 		<!-- End Links Description -->
+		<marquee id="motd" behavior="scroll" direction="left">MOTD</marquee>
 
 		<!-- Message Center -->
-		<div id="news-bg" style="margin-bottom: 25px;">
+		<div id="news-bg">
 			<div id="news">
-				<hr />
+				<hr>
 				<div id="news-left">
-					<h2>CREDITS:</h2><br/>
-					<p>* <a href="http://www.halo2pc.com" title="Halo 2 PC Vista home page">Halo2PC.com</a> who made Halo 2 great again and provide us the awesome website design.<!-- under <a href="https://creativecommons.org/licenses/by/4.0/" title="">creative commons license.</a>-->
-						<br/>* <a href="#">MrZameg and Trompetica</a> who create the medals idea and medals design.
-						<br/>* <a href="#">FIFA #1</a>.
-						<br/>* <a href="#">Chris</a> who made the stats system and the medals system development.
-						<br/><a href="https://github.com/cizaquita/PlayerStatsH2" title="Github Source Code">* Source Code</a> will be available soon.
-						<br/><br/>Powered by <a href="https://about.me/cizaquita" title="Chris">Chris😎</a>.
-					</p>
+					<h3 style="text-align: center; margin: 0 0 0 0; padding: 0 0 0 0;">Search player data</h3>
+					<label for="gamertag">Gamertag: </label>
+					<input id="gamertag" disabled="disabled">
+					<input type="hidden" id="gamertag-id">
+					<p id="gamertag-description"></p>
 				</div>
 				<div id="news-right">
-					<h2>SERVERS:</h2><br/>
-					<div id="servers-list">
-					</div>
+					<h2></h2><br/>
+					<div id="medalla" style="text-align: center;"></div>
 					<br>
+				</div>
+
+			</div>
+		</div>
+		<!-- End Message Center -->
+		<!-- Message Center -->
+		<div id="news-bg">
+			<div id="news">
+				<hr>
+				<div id="news-center">
+					<h3 style="text-align: center; margin: 0 0 0 0; padding: 0 0 0 0;">Tournament Winners!</h3>
+					<div id="podio" style="text-align: center; margin-top: 50px;">
+						<img title="Tournament winners!" class="discord" height="180px" width="400px" src="theme/images/podio.png">
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<!-- End Message Center -->
+
+		<!-- Message Center 
+		<div id="news-bg">
+			<div id="news">
+				<hr>
+				<div id="news-left">
+					<h3 alt="Kills/Death Ratio" style="text-align: center; margin: 0 0 0 0; padding: 0 0 0 0;">[Clow]TOP K/D Ratio</h3>
+					<div class="clow-kills-table">
+						<p>Loading...</p>
+					</div>
+				</div>
+				<div id="news-right">
+					<h3 style="text-align: center; margin: 0 0 0 0; padding: 0 0 0 0;">[Clow]TOP Best Spree</h3>
+					<div class="clow-spree-table">
+						<p>Loading...</p>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		End Message Center -->
+
+		<!-- Message Center -->
+		<div id="news-bg">
+			<div id="news">
+				<hr>
+				<div id="news-left">
+					<h3 style="text-align: center; margin: 0 0 0 0; padding: 0 0 0 0;">TOP Best Level</h3>
+					<div class="level-table">
+						<p>Loading...</p>
+					</div>
+				</div>
+				<div id="news-right">
+					<h3 style="text-align: center; margin: 0 0 0 0; padding: 0 0 0 0;">TOP Kills</h3>
+					<div class="kills-table">
+						<p>Loading...</p>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<!-- End Message Center -->
+
+		<!-- Message Center -->
+		<div id="news-bg">
+			<div id="news">
+				<hr>
+				<div id="news-left">
+					<h3 style="text-align: center; margin: 0 0 0 0; padding: 0 0 0 0;">TOP K/D Ratio</h3>
+					<div class="ratio-table">
+						<p>Loading...</p>
+					</div>
+				</div>
+				<div id="news-right">
+					<h3 style="text-align: center; margin: 0 0 0 0; padding: 0 0 0 0;">TOP Best Spree</h3>
+					<div class="spree-table">
+						<p>Loading...</p>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<!-- End Message Center -->
+
+		<!-- Message Center -->
+		<div id="news-bg">
+			<div id="news">
+				<hr>
+				<div id="news-center">
+					<h3 style="text-align: center; margin: 0 0 0 0; padding: 0 0 0 0;">Last Gamers Activity</h3>
+					<div class="activity-table">
+						<p>Loading...</p>
+					</div>
 				</div>
 
 			</div>
@@ -174,6 +255,6 @@
 	<!-- End Body -->
 	
 	<!-- Server count scripts-->
-	<script type="text/javascript" src="theme/js/main.js"></script>
+	<script type="text/javascript" src="theme/js/stats1.js"></script>
   </body>
 </html>
